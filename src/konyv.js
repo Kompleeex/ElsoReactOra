@@ -2,9 +2,11 @@ import './konyv.css';
 
 
 function Konyv(props){
-    function KosarKattintas(){
+    function KosarKezeles(){
+        // console.log(props.KonyvOBJ)
+        //app js kosárkezelésének a hívása
         console.log(props.KonyvOBJ)
-        props.KosarKezelesFV(props.KonyvOBJ)
+        props.KosarKezeles(props.KonyvOBJ)
     }
 
 
@@ -14,7 +16,8 @@ function Konyv(props){
             <h1>{props.KonyvOBJ.cim}</h1>
             <p>{props.KonyvOBJ.szerzo}</p>
             <p>{props.KonyvOBJ.ar}</p>
-            <button onClick={KosarKattintas}>Kosárba</button>
+            {/**ez a könyv komponens kosárkezelésének a hívása**/}
+            <button onClick={KosarKezeles}>Kosárba</button>
         </div>
     );
 }
