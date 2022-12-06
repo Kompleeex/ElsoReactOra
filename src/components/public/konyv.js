@@ -18,6 +18,7 @@ function Konyv(props){
             <p>{props.KonyvOBJ.ar}</p>
             {/**ez a könyv komponens kosárkezelésének a hívása**/}
             <button onClick={KosarKezeles}>Kosárba</button>
+            
         </div>
     );
 }

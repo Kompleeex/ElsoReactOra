@@ -1,22 +1,29 @@
-import Konyv from "./konyv";
+import Konyv from "./components/public/konyv";
 import "./App.css";
 import { useState } from "react";
-import Kosar from "./kosar.js";
+import Kosar from "./components/public/kosar.js";
 import kosarModell from "./modell/kosarModell.js";
+import Public from "./pages/public";
+import Admin from "./pages/admin";
+import Layout from "./pages/Layout";
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 
 const KonyvLista = [
   {
+    id:1,
     cim: "Valaki a lakásban",
     szerzo: "Robert Fraichmann",
     ar: 11111,
   },
   {
+    id:2,
     cim: "Manó a majom",
     szerzo: "Szabó Ágnes",
     ar: 22222,
   },
   {
+    id:3,
     cim: "nekem",
     szerzo: "Szabó Denisz",
     ar: 33333,
@@ -44,31 +51,14 @@ function App() {
       <header className="App-header">
         <h1>Könyváruház</h1>
       </header>
-      <section>
-        <p>A könyvek darabszáma: {db}</p>
-        <p>Az eddigi végösszeg: {vegosszeg}</p>
-        <table className="table table-stripped">
-          <thead>
-            <tr>
-              <th>cím</th>
-              <th>szerzo</th>
-              <th>ar</th>
-            </tr>
-          </thead>
-          <tbody>
-            {Kosaram.map((elem, index) => {
-              return <Kosar kosar={elem} key={index} />;
-            })}
-          </tbody>
-        </table>
-      </section>
-      <article>
-        {KonyvLista.map((konyv, index) => {
-          return (
-            <Konyv KonyvOBJ={konyv} key={index} KosarKezeles={KosarKezeles} />
-          );
-        })}
-      </article>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Public />} />
+          <Route path="admin" element={<Admin />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
       <footer>Paál Ádám</footer>
     </div>
   );

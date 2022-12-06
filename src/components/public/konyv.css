@@ -8,6 +8,7 @@
     border: 1px solid black;
     border-radius: 5px;
     width: 500px;
+    height: 250px;
     
 }
 
@@ -15,4 +16,20 @@
     color: white;
     background-color: #282c34;
     /* padding: 0px; */
+}
+
+nav{
+    margin: auto;
+    background-color: #d46f6f;
+}
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding:15px;
+}
+
+nav ul li{
+    list-style-type: none;
 }

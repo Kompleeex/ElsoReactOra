@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.App article{
+  display: flex;
+  flex-direction: column;
+}
+
 
 .App-header {
   background-color: #282c34;
@@ -14,14 +19,16 @@
   color: white;
 }
 
-article{
+.App article article{
   margin: auto;
   min-height: 70vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-
+.App article article .Konyv{
+  margin: 10px;
+}
 
 footer{
   min-height: 10vh
